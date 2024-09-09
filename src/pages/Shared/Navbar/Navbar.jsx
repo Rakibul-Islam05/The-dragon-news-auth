@@ -1,14 +1,15 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import userDefault from '../../../assets/user.png'
 
 const Navbar = () => {
 
-    const navLinks = <>
+    const navLinks = <div className="lg:flex">
         <li><NavLink to='/'>Home</NavLink></li>
         <li><NavLink to='about'>About</NavLink></li>
         <li><NavLink to='/career'>Career</NavLink></li>
+        <li><NavLink to='/login'>Login</NavLink></li>
 
-    </>
+    </div>
 
     return (
         <div className="navbar bg-base-100">
@@ -49,7 +50,9 @@ const Navbar = () => {
                             src={userDefault} />
                     </div>
                 </div>
-                <button className="btn">Login</button>
+                <Link to='/login'>
+                    <button className="btn">Login</button>
+                </Link>
             </div>
         </div>
     );
